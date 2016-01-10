@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://localhost:11266/EasyTourismWebServices.asmx?wsdl" docRef="http://localhost:11266/EasyTourismWebServices.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://localhost:11266/EasyTourismWebServices.asmx" xmlns:q1="http://dot.dei.isep.ipp.pt/jarasoft/Dir2/" binding="q1:EasyTourismServicesSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://localhost:11266/EasyTourismWebServices.asmx" xmlns:q2="http://dot.dei.isep.ipp.pt/jarasoft/Dir2/" binding="q2:EasyTourismServicesSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

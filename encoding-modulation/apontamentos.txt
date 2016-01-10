@@ -1,0 +1,44 @@
+nrz-l
+
+- duas voltagens para 0 e 1
+- uma voltagem 0 corresponde a zero e uma voltagem positiva é 1
+
+
+nrz-i
+
+- codificao em funcao da existencia ou nao de transicao no inicio de bit
+- existencia de transição significa 1
+- nao existencia de transição significa 0
+
+
+manchester
+
+- transicao a meio do tempo do bit
+- transisao positiva representa 1
+- transicao negatica representa 0 
+- a transicao serve para sincronismo e codificacao de dados
+
+
+
+pseudo
+
+- é igual ao bipolar-ami so que...
+- 1 representa ausencia de voltagem
+- o 0 alterna entre o positivo e o negativo e nunca dois 0s tem a mesma polaridade
+
+
+manchester dif
+
+- transicao a meio do tempo do bit
+- transicao serve para sincronismo
+- a transicao que codifica os dados é a que se dá no inicio do bit
+- 0 significa existencia de transicao
+- 1 significa inexistencia
+
+
+
+bipolar-ami
+
+- 0 representa ausencia de voltagem
+- 1 é representado por uma voltagem positiva ou negativa
+- o 1 alterna entre o positivo e o negativo e nunca dois 1s tem a mesma polaridade

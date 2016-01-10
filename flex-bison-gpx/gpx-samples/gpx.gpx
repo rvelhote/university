@@ -1,0 +1,62 @@
+<gpx creator="GPS TrackMaker 5.0" version="1.1">
+
+  <metadata>
+	<name>Corta-Mato</name>
+	<desc>o ficheiro metadata contem dados</desc>
+  	  
+    <link href="http://www.gpstm.com">
+      <text>Geo Studio Tecnology Ltd</text>
+	  <type>ff</type>
+    </link>
+	
+	<time>2005-09-26T00:58:36Z</time>
+    <bounds minlat="-41.695325" minlon="-8.858414" maxlat="41.801820" maxlon="-8.420503"/>
+	
+	<author>
+		<name>Ricardo_Velhote</name>
+		<email id="ric" domain="isep.com" />
+		
+		 <link href="http://www.velhote.com">
+			<text>ddd</text>
+		</link>
+	</author>
+	
+	<copyright author="chco">
+		<year>1999</year>
+		<license>http://www.g.com</license>
+	</copyright>	
+	
+  </metadata> 
+
+<wpt lat="41.170206" lon="-8.679214">
+</wpt>   
+
+  <trk>
+     <trkseg>
+		  <trkpt lat="41.170206" lon="-8.679214">			
+			<ele>25.657000</ele>
+			<time>2006-08-23T18:38:56Z</time>
+		  </trkpt>
+		  <trkpt lat="41.170026" lon="-8.679474">
+			<ele>25.709000</ele>
+			<time>2006-08-23T18:39:05Z</time>
+		  </trkpt>
+		  <trkpt lat="41.169933" lon="-8.679754">
+			<ele>25.230000</ele>
+			<time>2006-08-23T18:39:13Z</time>
+		  </trkpt>
+		  <trkpt lat="41.169886" lon="-8.679908">
+			<ele>25.002000</ele>
+			<time>2006-08-23T18:39:18Z</time>
+		  </trkpt>
+		  <trkpt lat="41.169819" lon="-8.680229">
+			<ele>26.026000</ele>
+			<time>2006-08-23T18:39:27Z</time>
+		  </trkpt>
+	 </trkseg>
+  </trk>
+  
+  <extensions>	
+  </extensions>
+</gpx>
+

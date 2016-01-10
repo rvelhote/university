@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://dot.dei.isep.ipp.pt/jarasoft/Dir2/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://dot.dei.isep.ipp.pt/jarasoft/Dir2/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://dot.dei.isep.ipp.pt/jarasoft/Dir2/">
+      <s:element name="SaveTour">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tourID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="list" type="tns:ArrayOfToVisit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfToVisit">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ToVisit" nillable="true" type="tns:ToVisit" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ToVisit">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:PointOfInterest">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="visited" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="ordering" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="beginVisit" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="endVisit" type="s:dateTime" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="PointOfInterest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="segmentID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="model" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="position" type="tns:Vector3D" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="features" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="restrictions" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="classification" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="facing" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Vector3D">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="x" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="y" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="z" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveTourResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveTourResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SVGMap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cityID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SVGMapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SVGMapResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CSVMap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cityID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CSVMapResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CityCartographyMinified">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cityID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CityCartographyMinifiedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CityCartographyMinifiedResult" type="tns:Cartography" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Cartography">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="pointsOfInterest" type="tns:ArrayOfPointOfInterest" />
+          <s:element minOccurs="0" maxOccurs="1" name="intersections" type="tns:ArrayOfIntersection" />
+          <s:element minOccurs="0" maxOccurs="1" name="roadSegments" type="tns:ArrayOfRoadSegment" />
+          <s:element minOccurs="0" maxOccurs="1" name="genericObjects" type="tns:ArrayOfGenericObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPointOfInterest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PointOfInterest" nillable="true" type="tns:PointOfInterest" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIntersection">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Intersection" nillable="true" type="tns:Intersection" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Intersection">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="position" type="tns:Vector3D" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRoadSegment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RoadSegment" nillable="true" type="tns:RoadSegment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RoadSegment">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idIntersectionBegin" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="idIntersectionEnd" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="avgByCar" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="avgByFoot" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="way" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfGenericObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GenericObject" nillable="true" type="tns:GenericObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GenericObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="position" type="tns:Vector3D" />
+          <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CityCartographyFull">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cityID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CityCartographyFullResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CityCartographyFullResult" type="tns:Cartography" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TourListForTourist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TourListForTouristResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TourListForTouristResult" type="tns:TourList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TourList">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="authenticated" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="touristID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="tours" type="tns:ArrayOfTour" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTour">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Tour" nillable="true" type="tns:Tour" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Tour">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="authenticated" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="tourID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="cityID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cityName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="begin" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="toVisit" type="tns:ArrayOfToVisit" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TourForTourist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tourID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TourForTouristResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TourForTouristResult" type="tns:Tour" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SaveTourSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveTour" />
+  </wsdl:message>
+  <wsdl:message name="SaveTourSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveTourResponse" />
+  </wsdl:message>
+  <wsdl:message name="SVGMapSoapIn">
+    <wsdl:part name="parameters" element="tns:SVGMap" />
+  </wsdl:message>
+  <wsdl:message name="SVGMapSoapOut">
+    <wsdl:part name="parameters" element="tns:SVGMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="CSVMapSoapIn">
+    <wsdl:part name="parameters" element="tns:CSVMap" />
+  </wsdl:message>
+  <wsdl:message name="CSVMapSoapOut">
+    <wsdl:part name="parameters" element="tns:CSVMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="CityCartographyMinifiedSoapIn">
+    <wsdl:part name="parameters" element="tns:CityCartographyMinified" />
+  </wsdl:message>
+  <wsdl:message name="CityCartographyMinifiedSoapOut">
+    <wsdl:part name="parameters" element="tns:CityCartographyMinifiedResponse" />
+  </wsdl:message>
+  <wsdl:message name="CityCartographyFullSoapIn">
+    <wsdl:part name="parameters" element="tns:CityCartographyFull" />
+  </wsdl:message>
+  <wsdl:message name="CityCartographyFullSoapOut">
+    <wsdl:part name="parameters" element="tns:CityCartographyFullResponse" />
+  </wsdl:message>
+  <wsdl:message name="TourListForTouristSoapIn">
+    <wsdl:part name="parameters" element="tns:TourListForTourist" />
+  </wsdl:message>
+  <wsdl:message name="TourListForTouristSoapOut">
+    <wsdl:part name="parameters" element="tns:TourListForTouristResponse" />
+  </wsdl:message>
+  <wsdl:message name="TourForTouristSoapIn">
+    <wsdl:part name="parameters" element="tns:TourForTourist" />
+  </wsdl:message>
+  <wsdl:message name="TourForTouristSoapOut">
+    <wsdl:part name="parameters" element="tns:TourForTouristResponse" />
+  </wsdl:message>
+  <wsdl:portType name="EasyTourismServicesSoap">
+    <wsdl:operation name="SaveTour">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Grava um percurso na Base de Dados [Requer Autenticação]</wsdl:documentation>
+      <wsdl:input message="tns:SaveTourSoapIn" />
+      <wsdl:output message="tns:SaveTourSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SVGMap">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna o Mapa da cidade escolhida em formato SVG</wsdl:documentation>
+      <wsdl:input message="tns:SVGMapSoapIn" />
+      <wsdl:output message="tns:SVGMapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CSVMap">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna a cartografia da cidade escolhida em formato CSV</wsdl:documentation>
+      <wsdl:input message="tns:CSVMapSoapIn" />
+      <wsdl:output message="tns:CSVMapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CityCartographyMinified">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna a cartografia mínima da cidade. Inclui: Intersecções, Segmentos de Estrada e Pontos de Interesse</wsdl:documentation>
+      <wsdl:input message="tns:CityCartographyMinifiedSoapIn" />
+      <wsdl:output message="tns:CityCartographyMinifiedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CityCartographyFull">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna a cartografia completa da cidade. Para além da informação incluída na cartografia mínima inclui também detalhes sobre cada atracção</wsdl:documentation>
+      <wsdl:input message="tns:CityCartographyFullSoapIn" />
+      <wsdl:output message="tns:CityCartographyFullSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TourListForTourist">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna a lista de Percursos que um determinado utilizador criou. [Requer Autenticação]</wsdl:documentation>
+      <wsdl:input message="tns:TourListForTouristSoapIn" />
+      <wsdl:output message="tns:TourListForTouristSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TourForTourist">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna um percurso escolhido por um utilizador. Inclui dados sobre as Atracções. [Requer Autenticação]</wsdl:documentation>
+      <wsdl:input message="tns:TourForTouristSoapIn" />
+      <wsdl:output message="tns:TourForTouristSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EasyTourismServicesSoap" type="tns:EasyTourismServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveTour">
+      <soap:operation soapAction="http://dot.dei.isep.ipp.pt/jarasoft/Dir2/SaveTour" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SVGMap">
+      <soap:operation soapAction="http://dot.dei.isep.ipp.pt/jarasoft/Dir2/SVGMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CSVMap">
+      <soap:operation soapAction="http://dot.dei.isep.ipp.pt/jarasoft/Dir2/CSVMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CityCartographyMinified">
+      <soap:operation soapAction="http://dot.dei.isep.ipp.pt/jarasoft/Dir2/CityCartographyMinified" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CityCartographyFull">
+      <soap:operation soapAction="http://dot.dei.isep.ipp.pt/jarasoft/Dir2/CityCartographyFull" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TourListForTourist">
+      <soap:operation soapAction="http://dot.dei.isep.ipp.pt/jarasoft/Dir2/TourListForTourist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TourForTourist">
+      <soap:operation soapAction="http://dot.dei.isep.ipp.pt/jarasoft/Dir2/TourForTourist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EasyTourismServicesSoap12" type="tns:EasyTourismServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveTour">
+      <soap12:operation soapAction="http://dot.dei.isep.ipp.pt/jarasoft/Dir2/SaveTour" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SVGMap">
+      <soap12:operation soapAction="http://dot.dei.isep.ipp.pt/jarasoft/Dir2/SVGMap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CSVMap">
+      <soap12:operation soapAction="http://dot.dei.isep.ipp.pt/jarasoft/Dir2/CSVMap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CityCartographyMinified">
+      <soap12:operation soapAction="http://dot.dei.isep.ipp.pt/jarasoft/Dir2/CityCartographyMinified" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CityCartographyFull">
+      <soap12:operation soapAction="http://dot.dei.isep.ipp.pt/jarasoft/Dir2/CityCartographyFull" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TourListForTourist">
+      <soap12:operation soapAction="http://dot.dei.isep.ipp.pt/jarasoft/Dir2/TourListForTourist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TourForTourist">
+      <soap12:operation soapAction="http://dot.dei.isep.ipp.pt/jarasoft/Dir2/TourForTourist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EasyTourismServices">
+    <wsdl:port name="EasyTourismServicesSoap" binding="tns:EasyTourismServicesSoap">
+      <soap:address location="http://localhost:11266/EasyTourismWebServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EasyTourismServicesSoap12" binding="tns:EasyTourismServicesSoap12">
+      <soap12:address location="http://localhost:11266/EasyTourismWebServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

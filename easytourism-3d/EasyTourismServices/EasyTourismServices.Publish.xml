@@ -1,0 +1,8 @@
+<publishData>
+  <publishTarget publishUrl="Z:\Dir2\">
+    <file relUrl="bin/EasyTourismServices.pdb" publishTime="01/20/2009 11:39:03" />
+    <file relUrl="EasyTourismWebServices.asmx" publishTime="01/11/2009 12:17:54" />
+    <file relUrl="bin/EasyTourismServices.dll" publishTime="01/20/2009 11:39:03" />
+    <file relUrl="web.config" publishTime="01/20/2009 11:37:03" />
+  </publishTarget>
+</publishData>

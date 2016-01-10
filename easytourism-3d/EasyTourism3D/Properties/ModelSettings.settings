@@ -1,0 +1,141 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EasyTourism3D.Properties" GeneratedClassName="ModelSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CasteloAdjustment" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0,0|0,0|-1,5</Value>
+    </Setting>
+    <Setting Name="CasteloDimensions" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3,0|1,0|2,0</Value>
+    </Setting>
+    <Setting Name="CasteloSoundName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AltarOfKingsWhat1</Value>
+    </Setting>
+    <Setting Name="WaygateAdjustment" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0,0|0,0|-2,0</Value>
+    </Setting>
+    <Setting Name="WaygateDimensions" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3,0|1,0|2,3</Value>
+    </Setting>
+    <Setting Name="WaygateSoundName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">GryphonAviaryWhat1.wav</Value>
+    </Setting>
+    <Setting Name="CityBuildingSmall0_0Adjustment" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0,0|0,0|-3,0</Value>
+    </Setting>
+    <Setting Name="CityBuildingSmall0_0Dimensions" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3,0|1,0|5,0</Value>
+    </Setting>
+    <Setting Name="CityBuildingSmall0_0SoundName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">GryphonAviaryWhat1.wav</Value>
+    </Setting>
+    <Setting Name="WorkshopAdjustment" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0,0|0,0|-1,0</Value>
+    </Setting>
+    <Setting Name="WorkshopDimensions" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3,0|1,0|3,0</Value>
+    </Setting>
+    <Setting Name="WorkshopSoundName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">GryphonAviaryWhat1.wav</Value>
+    </Setting>
+    <Setting Name="GryphonAviaryAdjustment" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0,0|0,0|0,0</Value>
+    </Setting>
+    <Setting Name="GryphonAviaryDimensions" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3,0|1,0|2,0</Value>
+    </Setting>
+    <Setting Name="GryphonAviarySoundName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">GryphonAviaryWhat1.wav</Value>
+    </Setting>
+    <Setting Name="AltarOfKingsAdjustment" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0,0|0,0|-1,5</Value>
+    </Setting>
+    <Setting Name="AltarOfKingsDimensions" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3,0|1,0|2,0</Value>
+    </Setting>
+    <Setting Name="AltarOfKingsSoundName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AltarOfKingsWhat1</Value>
+    </Setting>
+    <Setting Name="HumanBarracksAdjustment" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1,0|0,0|0,0</Value>
+    </Setting>
+    <Setting Name="HumanBarracksDimensions" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3,0|1,0|3,0</Value>
+    </Setting>
+    <Setting Name="HumanBarracksSoundName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">WorkshopWhat1.wav</Value>
+    </Setting>
+    <Setting Name="BridgeObeliskAdjustment" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0,5|0,0|-2,0</Value>
+    </Setting>
+    <Setting Name="BridgeObeliskDimensions" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1,0|1,0|1,0</Value>
+    </Setting>
+    <Setting Name="BridgeObeliskSoundName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AltarOfKingsWhat1</Value>
+    </Setting>
+    <Setting Name="DragonRoostBlackAdjustment" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0,0|0,0|-1,5</Value>
+    </Setting>
+    <Setting Name="DragonRoostBlackDimensions" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3,0|1,0|3,5</Value>
+    </Setting>
+    <Setting Name="DragonRoostBlackSoundName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">WorkshopWhat1.wav</Value>
+    </Setting>
+    <Setting Name="FrostmourneAdjustment" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0,0|0,0|-1,5</Value>
+    </Setting>
+    <Setting Name="FrostmourneDimensions" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1,0|1,0|1,0</Value>
+    </Setting>
+    <Setting Name="FrostmourneSoundName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AltarOfKingsWhat1</Value>
+    </Setting>
+    <Setting Name="AltarOfEldersAdjustment" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0,0|0,0|0,0</Value>
+    </Setting>
+    <Setting Name="AltarOfEldersDimensions" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3,0|1,0|3,5</Value>
+    </Setting>
+    <Setting Name="AltarOfEldersSoundName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AltarOfKingsWhat1</Value>
+    </Setting>
+    <Setting Name="GraveyardAdjustment" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0,0|0,0|-1,5</Value>
+    </Setting>
+    <Setting Name="GraveyardDimensions" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3,0|1,0|2,0</Value>
+    </Setting>
+    <Setting Name="GraveyardSoundName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AltarOfKingsWhat1</Value>
+    </Setting>
+    <Setting Name="BearDenAdjustment" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0,0|0,0|-1,5</Value>
+    </Setting>
+    <Setting Name="BearDenDimensions" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3,0|1,0|2,0</Value>
+    </Setting>
+    <Setting Name="BearDenSoundName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AltarOfKingsWhat1</Value>
+    </Setting>
+    <Setting Name="TreeofLifeAdjustment" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0,0|0,0|-2,5</Value>
+    </Setting>
+    <Setting Name="TreeofLifeDimensions" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3,0|1,0|2,5</Value>
+    </Setting>
+    <Setting Name="TreeofLifeSoundName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AltarOfKingsWhat1</Value>
+    </Setting>
+    <Setting Name="TownHallAdjustment" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0,0|0,0|-1,5</Value>
+    </Setting>
+    <Setting Name="TownHallDimensions" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">4,0|1,0|3,0</Value>
+    </Setting>
+    <Setting Name="TownHallSoundName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">WorkshopWhat1.wav</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
